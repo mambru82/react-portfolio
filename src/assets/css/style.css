@@ -1,0 +1,427 @@
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    color: gray;
+    font-family: Helvetica, Arial, sans-serif;
+  }
+  /* apply the styles to the header */
+   header {
+      background-image: url("../images/bckgrnd.jpeg");
+      background-size: cover; /*sets the size of the image so it won't get clipped */
+      background-position: center; /*centers the background image*/
+      background-attachment: fixed;
+      padding:20px 35px;
+      background-color: black;
+      display: flex;
+      justify-content: space-between; /* Distributes the elements in the header with even spacing between the header and nav */
+      flex-wrap: wrap; /*lets the child elements break into the next line when they don't fit */
+      width: 100%;
+      height: 10%;
+      align-items: center;
+      /* make it stick to the top */
+      /*position: -webkit-sticky; /*for safari users */
+      /*position: sticky;*/
+      top: 0;
+      z-index: 9999;
+  }
+  header img {
+      height: auto;
+      width: 15%;
+      border-radius: 5px;
+  }
+  header h1 {
+      font-weight: bold;
+      font-size: 36px;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      width: 30%;
+  }
+
+  header a {
+      text-decoration: none; /*takes off the blue color and underline for the links*/
+      color: white;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      font-weight: bold;
+      }
+
+  header nav {
+      margin: 7px 0;
+  }
+
+  header nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; /*aligns items on the x-axis when flex-direction is set to row*/
+      align-items: center; /*aligns items on the y or vertical axis (when flex-direction is row)*/
+      list-style: none;
+  }
+
+  header nav ul li a {
+      margin: 0 30px;
+      font-weight: bold;
+      font-size: 1.55vw;
+      text-shadow: 0 0 10px rgb(228, 228, 204, 0.5);
+  }
+
+  header nav ul li a:hover, header a:hover {
+    background: whitesmoke;
+    color: black;
+    border-radius: 2px;
+    padding: 5px;
+    text-shadow: none;
+  }
+  
+/* Hero section */
+.hero {
+    background-image: url("../images/clara.jpg");
+    background-size: cover; /*sets the size of the image so it won't get clipped */
+    background-position: center; /*centers the background image*/
+    background-attachment: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+    width: 100%;
+    padding: 330px 0 0 55%;
+  }
+
+.hero-content h2{
+    background-color: rgba(205, 207, 209, 0.5);
+    border-radius: 10px;
+    padding: 5px;
+    color: black;
+    width: 100%;
+    font-weight: lighter;
+}
+/* End of hero section */
+
+/*general content features */
+.content {
+    background-color: gainsboro;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: lighter;
+}
+
+/* end of content feature */
+
+/*larger flex box */
+.section-wrapper {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+}
+
+/*subdivision in flex-box, section title and section content */
+.section-title {
+    text-align: right;
+    width: 15%;
+    align-items: center;
+}
+
+.section-title h2 {
+    font-size: 26px;
+    border-right: solid darkslategrey;
+    height: 100%;
+    padding-right: 8px;
+    align-items: center;
+}
+
+.section-content {
+    text-align: left;
+    width: 85%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.section-content p{
+    font-size: 18px;
+    line-height: 1.5;
+    display: flex;
+}
+
+.section-content ul {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /*aligns items on the x-axis when flex-direction is set to row*/
+    align-items: center; /*aligns items on the y or vertical axis (when flex-direction is row)*/
+    list-style: none;
+}
+
+.section-content ul li a {
+    text-decoration: none;
+    color: black;
+    font-family: courier;
+    font-size: 20px;
+    font-style: lighter;
+}
+
+.section-content ul li a:hover {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-style: none;
+}
+
+.section-content img {
+    width: 15%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+ /* BEGINNING OF GRIDBOX */
+.grid-wrapper {
+    display: flex;
+    width: 85%;
+}
+.grid-container {
+    margin: 0 5px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)) ;
+    grid-template-rows: repeat(3, minmax(25px, auto)) ;
+    /*grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 300px);*/
+    align-content: center;
+    justify-items: stretch; /*can also use place items (align and justify)*/
+    color: black;
+    font-size: 1.2rem;
+    grid-gap: 1%;
+    position: relative;
+}
+
+.grid-item {
+    border: 2px solid black;
+    text-align: left;
+    justify-items: center;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.grid-item.main {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    /*background-image: url("../images/bckgrnd.jpg");
+    background-size: cover; */
+}
+
+.grid-item.two {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1 ;
+}
+
+.grid-item.three {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+}
+
+.grid-item.four {
+    grid-column: 1 / span 1;
+    grid-row: 3 / span 1;
+}
+
+.grid-item.five {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+}
+.grid-item h3, .grid-item p {
+    background-color: rgba(205, 207, 209, 0.8);
+    text-align: left;
+    padding: 5px;
+    border: none;
+    align-items: center;
+    width: 50%;
+}
+
+.grid-item h3 {
+    margin-top: 50%;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    justify-content: center;
+    
+}
+/* adds change in color when hovering over a link */
+.grid-item:hover::after {
+    content:"";
+    height: 100%;
+    width: 100%;
+    background: rgba(228, 178, 150, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.grid-container a {
+    text-decoration: none;
+    color: black;
+}
+
+/*code for making images part of background, blanked out for now
+.grid-item.other {
+  /*  background-image: url("../images/clara.jpg")
+}*/
+
+
+/* SMALLER desktop screens */
+
+@media screen and (max-width: 980px) {
+    header {
+        padding-bottom: 0;
+        justify-content: center;
+        position: relative;
+    }
+
+    header h1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    header nav ul {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    header nav ul li a {
+        font-size: 20px;
+    }
+
+    .hero {
+        padding: 15% 0 0 0;
+        justify-content: center;
+    }
+
+    .hero-content h2 {
+        font-size: 15px;
+        text-align: center;
+        justify-content: center;
+        margin-top: 85%;
+    }
+
+    .section-wrapper {
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+
+    .section-title {
+        width: 50%;
+        text-align: center;
+        padding: 0;
+        border-bottom: 2px solid;
+        padding-bottom: 10px;
+        margin: 0 auto 35px auto;
+    }
+
+    .section-title h2 {
+        padding: 10px;
+        margin: 0 auto;
+        height: 100%;
+        border-right: none;
+    }
+
+    .section-content {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .section-content p{
+        margin: 0 4%;
+    }
+
+    .grid-wrapper {
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .grid-item.main {
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2;
+    }
+    
+    .grid-item.two {
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 1;
+    }
+   
+    .grid-item.three {
+        grid-column: 2 / span 1;
+        grid-row: 3 / span 1;
+    }
+    
+    .grid-item.four {
+        grid-column: 1 / span 1;
+        grid-row: 4 / span 1;
+    }
+    
+    .grid-item.five {
+        grid-column: 2 / span 1;
+        grid-row: 4 / span 1;
+    }
+
+}
+
+/* Tablets and smaller */
+
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 32px;
+
+    }
+
+    header nav ul li a {
+        font-size: 15px;
+    }
+
+    .section-title h2{
+        font-size: 22px;
+    }
+
+    .section-content p{
+        font-size: 15px;
+    }
+
+    .section-content a{
+        font-size: smaller;
+    }
+
+    .grid-item h3, .grid-item p {
+        font-size: smaller;
+    }
+
+
+}
+
+/* mobile phones and smaller */
+
+@media screen and (max-width: 575px) {
+    header h1 {
+        font-size: 22px;
+    }
+
+    header nav ul li a {
+        margin: 0 auto;
+        padding: 8px;
+    }
+
+    .section-content ul {
+        display: block;
+        line-height: 1.5;
+        justify-content: center;
+        text-align: left;
+        margin-left: 5%;
+    }
+
+    .section-content img {
+        justify-content: right;
+    }
+
+}
